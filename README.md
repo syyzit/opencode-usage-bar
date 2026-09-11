@@ -1,10 +1,12 @@
 # opencode usage bar
 
-A macOS menu bar widget that shows your opencode Zen (Go) usage windows at a glance.
+A macOS menu bar widget that shows your opencode Go usage windows at a glance.
 
 For each window (5h rolling, weekly, monthly) it draws two small bars: the top bar is usage, the bottom bar is elapsed time. Both are gradient capsules inside an outline track, so you can compare how much you have used against how much of the window has passed.
 
 It is a SwiftBar plugin, paired with a tiny opencode plugin that refreshes the bar right after each response.
+
+Note: this tracks the opencode Go subscription, the $10/month plan with 5h, weekly, and monthly limits. It does not track the Zen pay-as-you-go balance.
 
 ![widget preview](docs/preview.png)
 
@@ -21,7 +23,7 @@ It is a SwiftBar plugin, paired with a tiny opencode plugin that refreshes the b
 - macOS
 - SwiftBar
 - python3 (ships with macOS)
-- opencode with an opencode-go (Zen) login, so that `~/.local/share/opencode/auth.json` contains an `opencode-go` key
+- opencode with an opencode-go (Go) subscription login, so that `~/.local/share/opencode/auth.json` contains an `opencode-go` key
 
 ## Install
 
@@ -59,7 +61,7 @@ The `.15m` in the filename is the fallback refresh interval. See Refresh cadence
 ## How it works
 
 - Reads your opencode-go key from `~/.local/share/opencode/auth.json`.
-- Requests `https://opencode.ai/zen/go/v1/usage` with a Bearer token.
+- Requests the opencode Go usage endpoint, `https://opencode.ai/zen/go/v1/usage`, with a Bearer token.
 - Draws a base64 PNG in pure Python for each window and hands it to SwiftBar.
 - Caches the last good response next to the script and applies the cadence rules below.
 

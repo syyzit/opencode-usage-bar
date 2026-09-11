@@ -2,7 +2,7 @@
 # <xbar.title>opencode usage</xbar.title>
 # <xbar.version>v1.0</xbar.version>
 # <xbar.author>spacecr8ed</xbar.author>
-# <xbar.desc>Shows opencode Zen (Go) usage windows in the macOS menu bar.</xbar.desc>
+# <xbar.desc>Shows opencode Go usage windows in the macOS menu bar.</xbar.desc>
 # <xbar.dependencies>python3</xbar.dependencies>
 # <swiftbar.hideAbout>true</swiftbar.hideAbout>
 # <swiftbar.hideRunInTerminal>true</swiftbar.hideRunInTerminal>
